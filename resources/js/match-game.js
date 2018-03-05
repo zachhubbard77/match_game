@@ -10,6 +10,24 @@ var MatchGame = {};
  */
 
 MatchGame.generateCardValues = function () {
+   
+    var sequence = [];
+    
+    for (var i = 1; i <= 8; i++) {
+        sequence.push(i,i);
+    }
+    
+    var cardValues = [];
+    
+    while (sequence.length > 0) {
+       var randomIndex = Math.floor(Math.random() * sequence.length);
+        var randomNumbers = sequence.splice(randomIndex, 1)[0];
+        
+        cardValues.push(randomNumbers);
+    }
+    
+    return cardValues;
+    //console.log(sequence);
 
 };
 
